@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Jairo Maia - Cardiologia</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+    rel="stylesheet">
+
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Designer.png">
+
+  <style>
+    /* ==================== BODY ==================== */
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f4efe6;
+      color: #1a1a1a;
+    }
+
+    /* ==================== HEADER ==================== */
+    header {
+      background: linear-gradient(90deg, #a9cae4 0%, #a9cae4 100%);
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      flex-wrap: wrap;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-img {
+      height: 60px;
+      object-fit: contain;
+    }
+
+    .logo-text h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 700;
+      color: #0077b6;
+    }
+
+    .logo-text p {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #1a1a1a;
+      font-weight: 500;
+      font-size: 14px;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #464e53;
+      left: 0;
+      bottom: -4px;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* ==================== HERO ==================== */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 100px 10%;
+      gap: 50px;
+      position: relative;
+
+      background: linear-gradient(135deg, #f4efe6 100%);
+      overflow: hidden;
+      border-radius: 0 0 50% 50% / 0 0 10% 10%;
+    }
+
+    /* ==================== MARCA D'ÁGUA MODERNA ==================== */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -30%;
+      transform: translate(-50%, -50%) scale(0.8);
+      width: 90%;
+      height: 90%;
+      background-image: url('Designer.png');
+      /* sua logo PNG */
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.3;
+      /* mais visível */
+      z-index: 0;
+      filter: drop-shadow(0 0 20px rgba(0, 119, 182, 0.6)) brightness(1.2);
+      animation: logo-slide 2s ease-out forwards, glow 3s infinite alternate;
+    }
+
+    @keyframes logo-slide {
+      0% {
+        left: -30%;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+      }
+
+      100% {
+        left: 75%;
+        /* posição final do logo, mais à direita */
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(0.9);
+      }
+    }
+
+    @keyframes glow {
+      0% {
+        filter: drop-shadow(0 0 15px rgba(0, 119, 182, 0.4)) brightness(1);
+      }
+
+      100% {
+        filter: drop-shadow(0 0 25px rgba(0, 119, 182, 0.6)) brightness(1.3);
+      }
+    }
+
+    @keyframes glow {
+      0% {
+        filter: drop-shadow(0 0 15px rgba(0, 119, 182, 0.4)) brightness(1);
+      }
+
+      100% {
+        filter: drop-shadow(0 0 25px rgba(0, 119, 182, 0.6)) brightness(1.3);
+      }
+    }
+
+    .hero-left,
+    .hero-right {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-left img {
+      width: 370px;
+      height: 450px;
+      border-radius: 20px;
+      border: 3px solid #b0916a;
+      object-fit: cover;
+      object-position: top;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+
+    .hero-left img:no-hover {
+      transform: scale(1.05);
+    }
+
+    .hero-right {
+      flex: 1;
+      font-style: italic;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .hero-right h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 36px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-style: normal;
+      background: linear-gradient(90deg, #aa403d, #9bdaee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+      margin-bottom: 12px;
+    }
+
+    .hero-right h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .hero-right p {
+      font-size: 15px;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .button {
+      background-color: #0077b6;
+      color: white;
+      padding: 14px 32px;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: 0.3s;
+      font-size: 14px;
+      display: inline-block;
+    }
+
+    .button:hover {
+      background-color: #005f8a;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 119, 182, 0.4);
+    }
+
+    /* ==================== SEÇÕES ==================== */
+    .section {
+      padding: 60px 40px;
+      border-radius: 15px;
+      margin: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: #0077b6;
+    }
+
+    .section p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .areas {
+      columns: 2;
+      column-gap: 60px;
+      font-size: 15px;
+      line-height: 2;
+    }
+
+    /* ==================== RESPONSIVIDADE ==================== */
+    @media(max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+        padding: 60px 5%;
+      }
+
+      .hero-left img {
+        width: 200px;
+        height: 250px;
+        margin: 0 auto;
+      }
+
+      .areas {
+        columns: 1;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+
+      nav {
+        margin-top: 15px;
+      }
+
+      .section {
+        margin: 10px;
+        padding: 40px 20px;
+      }
+
+      /* Mobile animation: logo começa mais à esquerda */
+      .hero::before {
+        width: 100%;
+        height: 100%;
+        left: -50%;
+        animation: logo-slide-mobile 2s ease-out forwards, glow 3s infinite alternate;
+      }
+
+      @keyframes logo-slide-mobile {
+        0% {
+          left: -50%;
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(0.5);
+        }
+
+        100% {
+          left: 50%;
+          opacity: 0.3;
+          transform: translate(-50%, -50%) scale(0.9);
+        }
+      }
+    }
+
+    /* ==================== DEPOIMENTOS ==================== */
+    .depoimentos {
+      padding: 80px 40px;
+      background: linear-gradient(135deg, #f9f9f9, #eef5f9);
+      text-align: center;
+    }
+
+    .depoimentos h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      margin-bottom: 50px;
+      color: #0077b6;
+    }
+
+    .slider-container {
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 25px;
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.6s ease;
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 500px;
+      object-fit: contain;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+
+    /* ==================== BOTÕES LATERAIS ==================== */
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      /* sem fundo */
+      border: none;
+      /* sem borda */
+      color: #0077b6;
+      /* cor da seta */
+      font-size: 28px;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 2;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .slider-btn:hover {
+      color: #005f8a;
+      transform: translateY(-50%) scale(1.2);
+    }
+
+    .prev {
+      left: 10px;
+      /* distância da esquerda da imagem */
+    }
+
+    .next {
+      right: 10px;
+      /* distância da direita da imagem */
+    }
+
+    /* Bolinhas indicadoras glass */
+    .dots {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .dot {
+      width: 14px;
+      height: 14px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .dot:hover {
+      transform: scale(1.3);
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .dot.active {
+      background: #0077b6;
+      transform: scale(1.3);
+      border-color: #0077b6;
+    }
+
+    /* Responsivo */
+    @media(max-width: 768px) {
+      .slider {
+        height: 380px;
+      }
+
+      .prev {
+        left: 10px;
+      }
+
+      .next {
+        right: 10px;
+      }
+    }
+
+    <style>
+
+    /* ==================== LOCALIZAÇÃO ==================== */
+    .map-container {
+      width: 100%;
+      height: 450px;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    @media(max-width: 768px) {
+      .map-container {
+        height: 300px;
+      }
+    }
+
+    /* ==================== GALERIA DE FOTOS ==================== */
+    .fotos h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      margin-bottom: 40px;
+      color: #0077b6;
+      text-align: center;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+
+    .gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.05);
+      transition: background 0.3s;
+    }
+
+    .gallery-item:hover::after {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* RESPONSIVO */
+    @media(max-width: 768px) {
+      .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+      }
+    }
+
+    /* ==================== LIGHTBOX ==================== */
+    #lightbox {
+      position: fixed;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 999;
+      cursor: pointer;
+    }
+
+    #lightbox img.lightbox-img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    #lightbox .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 50px;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #lightbox .close:hover {
+      color: #0077b6;
+    }
+
+    /* ==================== FAQ ==================== */
+    .faq .faq-item {
+      margin-bottom: 15px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: #e0e0e0;
+      /* cinza */
+      color: #333;
+      padding: 16px 20px;
+      text-align: left;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      border-radius: 10px;
+      font-weight: 500;
+    }
+
+    .faq-question:hover {
+      background: #d4d4d4;
+    }
+
+    .faq-answer {
+      background: #8bbbd4;
+      /* azul */
+      color: #fff;
+      padding: 16px 20px;
+      font-size: 15px;
+      display: none;
+      line-height: 1.6;
+      transition: 0.3s;
+    }
+
+    .faq-answer p {
+      margin: 0;
+    }
+
+    /* ==================== ANIMAÇÃO DAS SEÇÕES ==================== */
+    .animate-section {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .animate-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    < !--====================FOOTER STYLE====================-->.footer {
+      background: #f4efe6;
+      padding: 40px 10%;
+      border-top: 4px solid #0077b6;
+      color: #1a1a1a;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      /* limita largura */
+      margin: 0 auto;
+      /* centraliza */
+      padding: 0 40px;
+      /* cria espaço lateral */
+
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+
+    .footer-section h3 {
+      margin-bottom: 5x;
+      color: #0077b6;
+      font-size: 18px;
+    }
+
+    .footer-section p,
+    .footer-section a {
+      margin: 5px 0;
+      color: #333;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-section a:hover {
+      color: #005f8a;
+      text-decoration: underline;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin-right: 12px;
+      font-size: 18px;
+      color: #0077b6;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #005f8a;
+      transform: scale(1.2);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 13px;
+      color: #555;
+      border-top: 1px solid #ddd;
+      padding-top: 15px;
+    }
+
+    /* Responsivo */
+    @media(max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+    }
+
+    /* ==================== SESSÕES COM GRADIENTE SUAVE ==================== */
+    section:not(.hero) {
+      transition: background 5s ease-in-out;
+      /* 5 segundos para suavidade máxima */
+    }
+
+    section:not(.hero):hover {
+      background: linear-gradient(135deg, #f8fbff, #cbced3);
+      /* cores do gradiente */
+    }
+  </style>
+
+  <!-- ==================== FONT AWESOME ==================== -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  </style>
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header>
+    <div class="logo-container">
+      <img src="Designer.png" alt="Logo Dr. Jairo" class="logo-img">
+      <div class="logo-text">
+        <h1>Dr. Jairo Maia</h1>
+        <p>Cardiologia & Clínica Médica</p>
+      </div>
+    </div>
+    <nav>
+      <a href="#conheca">CONHEÇA O DOUTOR JAIRO</a>
+      <a href="#areas">ÁREAS DE ATENDIMENTO</a>
+      <a href="#depoimentos">DEPOIMENTO DE PACIENTES</a>
+      <a href="#localizacao">LOCALIZAÇÃO</a>
+      <a href="#fotos">FOTOS</a>
+      <a href="#duvidas">DÚVIDAS MAIS FREQUENTES</a>
+    </nav>
+  </header>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero">
+    <div class="hero-left">
+      <img src="jairofotoprincipal.png" alt="Dr. Jairo Maia">
+    </div>
+    <div class="hero-right">
+      <h1>CARDIOLOGIA E CLÍNICA MÉDICA</h1>
+      <h2>DR. JAIRO MAIA</h2>
+      <p><strong>CRM 105435 / RQE 4469</strong></p>
+      <p><strong>Medicina de excelência</strong> para quem busca um médico de referência em São Paulo e grande ABC.</p>
+      <p><strong>Atendimento Integral e Humanizado.</strong></p>
+      <a class="button" href="https://wa.me/5511993803145" target="_blank">
+        MARQUE SUA CONSULTA
+      </a>
+    </div>
+  </section>
+
+  <!-- ==================== SEÇÕES ==================== -->
+  <section class="section" id="conheca">
+    <h2>CONHEÇA MAIS
+    </h2>
+    <div class="conheca-container">
+      <div class="conheca-foto">
+        <img src="jairo conheca mais 1.jpeg" alt="Dr. Jairo Maia">
+      </div>
+      <div class="conheca-foto">
+        <img src="jairo conheca mais 2.JPG" alt="Dr. Jairo Maia">
+      </div>
+      <div class="conheca-texto">
+        <p>
+          Doutor Jairo Maia é médico cardiologista com especialidade em cardiologia e clínica médica,
+          <strong>formado há mais de 25 anos, com atuação há mais de 20 anos em terapia intensiva e
+            consultório.</strong>
+          <br><br>
+          Natural de Salvador/Bahia, formado em medicina na Universidade Federal da Bahia (UFBA) em 2001,
+          mudou-se para São Paulo em 2003 onde fez Residência e Especialização em Clínica Médica na
+          Santa Casa de Misericórdia de São Paulo (2003-2005) e Cardiologia no Instituto Dante Pazzanese
+          de Cardiologia (2005-2007).
+        </p>
+        <a class="button" href="https://wa.me/5511993803145" target="_blank">
+          MARQUE SUA CONSULTA
+        </a>
+  </section>
+
+  <section class="section" id="areas">
+    <h2>ÁREAS DE ATENDIMENTO</h2>
+    <div class="areas">
+      <ul>
+        <li>Hipertensão arterial</li>
+        <li>Doença arterial coronariana</li>
+        <li>Insuficiência cardíaca</li>
+        <li>Valvulopatias</li>
+        <li>Diabetes</li>
+        <li>Dislipidemias</li>
+        <li>Arritmias Cardíacas</li>
+        <li>Obesidade/Emagrecimento</li>
+        <li>Transtornos de humor (depressão e ansiedade)</li>
+        <li>Doença renal crônica</li>
+        <li>Doença refluxo gastro esofágico, gastroduodenites, obstipação</li>
+        <li>Doença Pulmonar Obstrutiva Crônica</li>
+        <li>Asma Brônquica</li>
+        <li>Osteoporose</li>
+        <li>Demências</li>
+        <li>Tabagismo</li>
+        <li>Hipogonadismo funcional (Andropausa)</li>
+        <li>Dentre outras áreas relacionadas com Clínica Médica</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================== DEPOIMENTOS ==================== -->
+  <section class="depoimentos" id="depoimentos">
+    <h2>DEPOIMENTOS DE PACIENTES</h2>
+
+    <div class="slider-container">
+      <button class="slider-btn prev">&#10094;</button>
+
+      <div class="slider">
+        <img src="comentariocliente1.png" class="slide active" alt="Depoimento 1">
+        <img src="cometariopaciente2.png" class="slide" alt="Depoimento 2">
+        <img src="comentariopaciente3.png" class="slide" alt="Depoimento 3">
+        <img src="comentariopaciente4.png" class="slide" alt="Depoimento 4">
+        <img src="comentariocliente5.png" class="slide" alt="Depoimento 5">
+        <img src="comentariocliente6.png" class="slide" alt="Depoimento 6">
+        <img src="comentariocleinte7.png" class="slide" alt="Depoimento 7">
+      </div>
+
+      <!-- Bolinhas indicadoras -->
+      <div class="dots"></div>
+
+      <button class="slider-btn next">&#10095;</button>
+    </div>
+  </section>
+
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const next = document.querySelector('.next');
+    const prev = document.querySelector('.prev');
+    const dotsContainer = document.querySelector('.dots');
+
+    let current = 0;
+
+    /* Criar bolinhas automaticamente */
+    slides.forEach((_, index) => {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (index === 0) dot.classList.add('active');
+
+      dot.addEventListener('click', () => {
+        current = index;
+        updateSlider();
+        resetAutoplay();
+      });
+
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.dot');
+
+    function updateSlider() {
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+
+      const slider = document.querySelector('.slider');
+      slider.style.transform = `translateX(-${current * 100}%)`;
+    }
+
+    /* Botões */
+    next.addEventListener('click', () => {
+      current = (current + 1) % slides.length;
+      updateSlider();
+      resetAutoplay();
+    });
+
+    prev.addEventListener('click', () => {
+      current = (current - 1 + slides.length) % slides.length;
+      updateSlider();
+      resetAutoplay();
+    });
+
+    /* ==================== AUTOPLAY ==================== */
+    let autoplay = setInterval(() => {
+      current = (current + 1) % slides.length;
+      updateSlider();
+    }, 5000);
+
+    function resetAutoplay() {
+      clearInterval(autoplay);
+      autoplay = setInterval(() => {
+        current = (current + 1) % slides.length;
+        updateSlider();
+      }, 5000);
+    }
+  </script>
+
+  <!-- ==================== LOCALIZAÇÃO ==================== -->
+  <section class="section" id="localizacao">
+    <h2>LOCALIZAÇÃO</h2>
+    <p>Visite nosso consultório em Santo André - SP à 50m da Drogaria São Paulo.</p>
+
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.0000000000!2d-46.0000000000!3d-23.0000000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce500000000000%3A0x0000000000000000!2sRua%20das%20Bandeiras%2C%2050%20-%20Jardim%2C%20Santo%20Andr%C3%A9%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1699999999999!5m2!1spt-BR!2sbr"
+        width="100%" height="450" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+  <!-- ==================== FOTOS ==================== -->
+  <section class="section fotos" id="fotos">
+    <h2>FOTOS</h2>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="consultorio1.jpeg" alt="Foto Consultório 1">
+      </div>
+      <div class="gallery-item">
+        <img src="consultorio2.jpeg" alt="Foto Consultório 2">
+      </div>
+      <div class="gallery-item">
+        <img src="consultorio3.jpeg" alt="Foto Consultório 3">
+      </div>
+      <div class="gallery-item">
+        <img src="consultorio4.jpeg" alt="Foto Consultório 4">
+      </div>
+      <div class="gallery-item">
+        <img src="consultorio5.jpeg" alt="Foto Consultório 5">
+      </div>
+      <div class="gallery-item">
+        <img src="consultorio6.jpeg" alt="Foto Consultório 6">
+      </div>
+      <div class="gallery-item">
+        <img src="consultorio7.jpeg" alt="Foto Consultório 7">
+      </div>
+      <div class="gallery-item">
+        <img src="jinclinica1.jpeg" alt="Foto Consultório 8">
+      </div>
+      <div class="gallery-item">
+        <img src="jinclinica2.jpeg" alt="Foto Consultório 9">
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox">
+      <span class="close">&times;</span>
+      <img class="lightbox-img" src="" alt="Foto Ampliada">
+    </div>
+  </section>
+
+  </section>
+
+
+  </section>
+
+
+
+
+  <style>
+    /* ==================== LOCALIZAÇÃO ==================== */
+    .map-container {
+      width: 100%;
+      height: 450px;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    @media(max-width: 768px) {
+      .map-container {
+        height: 300px;
+      }
+    }
+
+    .conheca-container {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .conheca-foto img {
+      width: 250px;
+      height: 300px;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s, filter 0.3s;
+    }
+
+    .conheca-foto img:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+
+    .conheca-texto {
+      flex: 1;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #333;
+    }
+  </style>
+
+  <script>
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.querySelector('.lightbox-img');
+    const closeBtn = document.querySelector('#lightbox .close');
+
+    galleryItems.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target !== lightboxImg) {
+        lightbox.style.display = 'none';
+      }
+    });
+  </script>
+
+  <!-- ==================== DÚVIDAS MAIS FREQUENTES ==================== -->
+  <section class="section faq" id="duvidas">
+    <h2>DÚVIDAS MAIS FREQUENTES</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">Você atende algum Plano de Saúde?</button>
+      <div class="faq-answer">
+        <p>Não. Os atendimentos são particulares.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Você atende pacientes a partir de que idade?</button>
+      <div class="faq-answer">
+        <p>Atendimento de pacientes a partir de 14 anos.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">O que devo levar na primeira consulta?</button>
+      <div class="faq-answer">
+        <p>Oriento trazer todos os exames mais recentes assim como as medicações em uso.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">O local tem estacionamento próprio?</button>
+      <div class="faq-answer">
+        <p>Sim. Há estacionamento próprio. E há um estacionamento pago logo à frente.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Você atende telemedicina?</button>
+      <div class="faq-answer">
+        <p>Não. Atendimento apenas presencial.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Em caso de urgência e emergência como posso fazer contato?</button>
+      <div class="faq-answer">
+        <p>Contato sempre pessoalmente, via WhatsApp, até para agendamento de consultas. Todo contato é diretamente
+          comigo.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Qual a duração da consulta?</button>
+      <div class="faq-answer">
+        <p>Não há tempo de consulta. Mas em média, cerca de 1 hora.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      question.addEventListener('click', () => {
+        const answer = item.querySelector('.faq-answer');
+        const isOpen = answer.style.display === 'block';
+
+        // Fecha todos
+        document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+
+        // Abre o atual se estava fechado
+        if (!isOpen) answer.style.display = 'block';
+      });
+    });
+  </script>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Contato</h3>
+        <p>Rua das Bandeiras, 50 - Jardim, Santo André - SP</p>
+        <p>Tel: (11) 4999-4149</p>
+        <p>WhatsApp: <a href="https://wa.me/5511993803145" target="_blank">11 99380-3145</a></p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Sobre</h3>
+        <p>Dr. Jairo Maia - Cardiologia e Clínica Médica</p>
+        <p>Atendimento Integral e Humanizado</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Dr. Jairo Maia. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
